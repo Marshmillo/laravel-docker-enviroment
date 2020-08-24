@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./src/donbodegon-logistic:/var/www/html:z
+      - ./src:/var/www/html:z
     depends_on:
       - php
       - mysql
@@ -42,7 +42,7 @@ services:
       dockerfile: php.dockerfile
     container_name: php
     volumes:
-      - ./src/donbodegon-logistic:/var/www/html:z
+      - ./src:/var/www/html:z
     ports:
       - "9000:9000"
     networks:
@@ -52,7 +52,7 @@ services:
     image: composer:latest
     container_name: composer
     volumes:
-      - ./src/donbodegon-logistic:/var/www/html:z
+      - ./src:/var/www/html:z
     working_dir: /var/www/html
     depends_on:
       - php
@@ -63,7 +63,7 @@ services:
     image: node:13.7
     container_name: npm
     volumes:
-      - ./src/donbodegon-logistic:/var/www/html:z
+      - ./src:/var/www/html:z
     working_dir: /var/www/html
     entrypoint: ['npm']
 
@@ -73,7 +73,7 @@ services:
       dockerfile: php.dockerfile
     container_name: artisan
     volumes:
-      - ./src/donbodegon-logistic:/var/www/html:z
+      - ./src:/var/www/html:z
     depends_on:
       - mysql
     working_dir: /var/www/html
