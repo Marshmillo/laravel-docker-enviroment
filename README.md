@@ -1,6 +1,6 @@
 # laravel-docker-enviroment
 
-This repo is a adaptation from https://github.com/aschmelyun/docker-compose-laravel.
+This repo is an adaptation from https://github.com/aschmelyun/docker-compose-laravel.
 
 ## Usage
 
